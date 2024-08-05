@@ -1,0 +1,94 @@
+Question,Options,Carbon_Footprint_Value
+Cinsiyetiniz,E,0
+Cinsiyetiniz,K,0
+Yaşınız,18-24,0
+Yaşınız,25-34,0
+Yaşınız,35-44,0
+Yaşınız,45-54,0
+Yaşınız,55-64,0
+Yaşınız,65+,0
+Hangi toplu taşıma aracını kullanıyorsunuz?,Otobüs,100
+Hangi toplu taşıma aracını kullanıyorsunuz?,"Raylı Sistemler(metro, banliyö vs...)",50
+Hangi toplu taşıma aracını kullanıyorsunuz?,Deniz Yolu,80
+Hangi toplu taşıma aracını kullanıyorsunuz?,Şahsi aracımı kullanıyorum,300
+Haftalık toplu taşıma kullanma sıklığınız?,Hiç,0
+Haftalık toplu taşıma kullanma sıklığınız?,1-2 kez,20
+Haftalık toplu taşıma kullanma sıklığınız?,3-4 kez,40
+Haftalık toplu taşıma kullanma sıklığınız?,5-6 kez,60
+Haftalık toplu taşıma kullanma sıklığınız?,7-10 kez,100
+Haftalık toplu taşıma kullanma sıklığınız?,10 kez,150
+Eğitim Durumunuz nedir?,İlkokul,0
+Eğitim Durumunuz nedir?,Lise,0
+Eğitim Durumunuz nedir?,Önlisans,0
+Eğitim Durumunuz nedir?,Lisans,0
+Eğitim Durumunuz nedir?,Yüksek Lisans ve üstü,0
+Şahsi aracınız var mı?,Evet,300
+Şahsi aracınız var mı?,Hayır,0
+Hane halkınızın toplam aylık geliri nedir?,<10.000 TL,0
+Hane halkınızın toplam aylık geliri nedir?,10.000 TL-17.000 TL,0
+Hane halkınızın toplam aylık geliri nedir?,17.000 TL-30.000 TL,0
+Hane halkınızın toplam aylık geliri nedir?,30.000 TL-50.000 TL,0
+Hane halkınızın toplam aylık geliri nedir?,50.000 TL-80.000 TL,0
+Hane halkınızın toplam aylık geliri nedir?,80.000 TL+,0
+Isınmak için hangi tür enerji kullanıyorsunuz?,Doğalgaz,500
+Isınmak için hangi tür enerji kullanıyorsunuz?,Elektrik,300
+Isınmak için hangi tür enerji kullanıyorsunuz?,"Diğer (LPG, Odun, Kömür vb.)",800
+Şahsi aracınızla haftalık ne kadar km yapıyorsunuz?,0-50 km,100
+Şahsi aracınızla haftalık ne kadar km yapıyorsunuz?,51-100 km,200
+Şahsi aracınızla haftalık ne kadar km yapıyorsunuz?,101-200 km,400
+Şahsi aracınızla haftalık ne kadar km yapıyorsunuz?,200 km ve üstü,600
+Şahsi aracınızla haftalık ne kadar km yapıyorsunuz?,Aracım yok,0
+Aracınızın yakıt tipi nedir?,Benzin,200
+Aracınızın yakıt tipi nedir?,Dizel,250
+Aracınızın yakıt tipi nedir?,Benzin+LPG,150
+Aracınızın yakıt tipi nedir?,Elektrik,50
+Aracınızın yakıt tipi nedir?,Hibrit,100
+Aracınızın yakıt tipi nedir?,Şahsi aracım yok,0
+Aylık yakıt masrafınız ne kadardır?,0-500 TL,50
+Aylık yakıt masrafınız ne kadardır?,500-1000 TL,100
+Aylık yakıt masrafınız ne kadardır?,1001-2000 TL,200
+Aylık yakıt masrafınız ne kadardır?,2001-3000 TL,300
+Aylık yakıt masrafınız ne kadardır?,3001+ TL,400
+Aylık yakıt masrafınız ne kadardır?,Aracım yok.,0
+Hangi bölgemizde oturuyorsunuz?,Akdeniz,0
+Hangi bölgemizde oturuyorsunuz?,Ege,0
+Hangi bölgemizde oturuyorsunuz?,Karadeniz,0
+Hangi bölgemizde oturuyorsunuz?,İç Anadolu,0
+Hangi bölgemizde oturuyorsunuz?,Doğu Anadolu,0
+Hangi bölgemizde oturuyorsunuz?,Marmara,0
+Hangi bölgemizde oturuyorsunuz?,Güney Doğu Anadolu,0
+Evde kaç kişi yaşıyorsunuz?,2-3 kişi,100
+Evde kaç kişi yaşıyorsunuz?,4-6 kişi,200
+Evde kaç kişi yaşıyorsunuz?,7-10 kişi,300
+Evde kaç kişi yaşıyorsunuz?,10+,400
+Evde kaç kişi yaşıyorsunuz?,Yalnız yaşıyorum.,50
+Ortalama aylık elektrik faturanız?,0-200 TL,50
+Ortalama aylık elektrik faturanız?,201-400 TL,100
+Ortalama aylık elektrik faturanız?,401-600 TL,150
+Ortalama aylık elektrik faturanız?,601+ TL,200
+Ortalama aylık elektrik faturanız?,Elektrik faturası ödemiyorum.,0
+Güneş enerjisi sistemleri (PV) kullanıyor musunuz?,Evet,-100
+Güneş enerjisi sistemleri (PV) kullanıyor musunuz?,Hayır,0
+Ortalama aylık doğalgaz faturanız?,0-400 TL,100
+Ortalama aylık doğalgaz faturanız?,401-600 TL,200
+Ortalama aylık doğalgaz faturanız?,601-800 TL,300
+Ortalama aylık doğalgaz faturanız?,801-1000 TL,400
+Ortalama aylık doğalgaz faturanız?,1001-1200 TL,500
+Ortalama aylık doğalgaz faturanız?,1201-1500 TL,600
+Ortalama aylık doğalgaz faturanız?,1500+ TL,700
+Ortalama aylık doğalgaz faturanız?,Doğalgaz faturası ödemiyorum.,0
+Elektronik eşya satın alırken enerji sınıfına dikkat ediyor musunuz?,Evet,0
+Elektronik eşya satın alırken enerji sınıfına dikkat ediyor musunuz?,Hayır,50
+Aylık tekstil alışveriş sıklığınız nedir?,Hiç,0
+Aylık tekstil alışveriş sıklığınız nedir?,1-2 kez,50
+Aylık tekstil alışveriş sıklığınız nedir?,3-4 kez,100
+Aylık tekstil alışveriş sıklığınız nedir?,5-6 kez,150
+Aylık tekstil alışveriş sıklığınız nedir?,7-10 kez,200
+Aylık tekstil alışveriş sıklığınız nedir?,10+ kez,250
+Çevreye zarar veren kimyasallar içeren ürünler kullanıyor musunuz?,Evet,100
+Çevreye zarar veren kimyasallar içeren ürünler kullanıyor musunuz?,Hayır,0
+Evde atık dönüştürüyor musunuz?,Evet,-50
+Evde atık dönüştürüyor musunuz?,Hayır,50
+"Telefon, tablet, vs... gibi cihazlarınızı ne sıklıkla yeniliyorsunuz?",2 yılda bir,100
+"Telefon, tablet, vs... gibi cihazlarınızı ne sıklıkla yeniliyorsunuz?",4 yılda bir,50
+"Telefon, tablet, vs... gibi cihazlarınızı ne sıklıkla yeniliyorsunuz?",5 yıl ve üstü,0
