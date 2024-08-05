@@ -52,7 +52,7 @@ data = load_csv(csv_file_path)
 # 2. Kullanıcı Arayüzü
 st.title("Karbon Ayak İzi Hesaplayıcı")
 tab1, tab2, tab3, = st.tabs(["👴 Personal","🚗 Travel","🗑️ Waste",])
-tab_result,_ = result.tabs([" "," "])
+
 with tab1:
     st.header("Personal Information")
     toplu_tasima_haftalik = tab1.slider("Haftalık Toplu Taşıma Süresi (saat)", 0, 20, 1)
