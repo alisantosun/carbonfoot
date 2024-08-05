@@ -14,7 +14,7 @@ def load_csv(csv_url):
         return None
 
 # CSV dosyasını yükle
-df = load_csv(github_url)
+df = load_csv(csv_file_path)
 if df is not None:
     st.write(df)
 
