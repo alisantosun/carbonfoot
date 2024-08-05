@@ -85,7 +85,7 @@ def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tip
     return total_emisyon
 
 # Kullanıcıdan gelen verilere göre hesaplama yapalım
-carbon_footprint = calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi)
+carbon_footprint = calculate_carbon_footprint()
 st.write(f"Toplam Karbon Ayak İzi: {carbon_footprint:.2f} kg CO2")
 
 # Karbon ayak izi eşik değerleri ve öneriler
