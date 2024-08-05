@@ -70,7 +70,7 @@ with tab3:
     enerji_tipi = st.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 'Doğalgaz', 'Kömür'])
 
 # 3. Karbon Ayak İzi Hesaplama
-def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi):
+def calculate_carbon_footprint(Isınmak için hangi tür enerji kullanıyorsunuz?, arac_km_yillik, enerji_tipi):
     try:
         # Basit bir hesaplama örneği yapalım
         toplu_tasima_emisyon = toplu_tasima_haftalik * data['Emisyon_toplutasima'].mean()  # Ortalama emisyon değeri ile çarpalım
