@@ -1,6 +1,14 @@
 import streamlit as st
 import pandas as pd
 
+def get_base64(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+background = get_base64("./media/background_min.jpg")
+icon2 = get_base64("./media/icon2.png")
+icon3 = get_base64("./media/icon3.png")
 # GitHub'dan CSV dosyasını okumak için URL belirtin
 csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbonfoot/main/karbon_ayak_izi_duzenlenmis.csv'
 
