@@ -9,9 +9,9 @@ try:
 
 
 # 1. CSV Dosyasını Yükleme
-def load_csv(file_path):
+def load_csv(csv_file_path):
     try:
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(csv_file_path)
         if df.empty:
             st.error("CSV dosyası boş. Lütfen doğru bir dosya yükleyin.")
             st.stop()
