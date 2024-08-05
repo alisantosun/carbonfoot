@@ -28,6 +28,30 @@ st.markdown(
 # GitHub'dan CSV dosyasını okumak için URL belirtin
 csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbonfoot/main/datac.csv'
 
+import csv
+
+def find_and_fix_errors(input_file, output_file):
+    with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'w', newline='', encoding='utf-8') as outfile:
+        reader = csv.reader(infile)
+        writer = csv.writer(outfile)
+
+        headers = next(reader)
+        writer.writerow(headers)
+
+        for row_number, row in enumerate(reader, start=2):
+            if len(row) != len(headers):
+                print(f"Hatalı satır {row_number}: {row}")
+                # Hatalı satırları düzeltmek için özel bir işlem yapabilirsiniz
+                # Bu örnekte hatalı satırları atlıyoruz
+            else:
+                writer.writerow(row)
+
+input_csv_file = 'path/to/your/input.csv'
+output_csv_file = 'path/to/your/cleaned_output.csv'
+find_and_fix_errors(input_csv_file, output_csv_file)
+
+
+
 def load_csv(csv_url):
     try:
         df = pd.read_csv(csv_url)
