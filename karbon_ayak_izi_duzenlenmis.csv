@@ -1,11 +1,11 @@
 Question,Options,Carbon_Footprint_Value
-Cinsiyetiniz,E,0
-Cinsiyetiniz,K,0
-Yaşınız,18-24,0
-Yaşınız,25-34,0
-Yaşınız,35-44,0
-Yaşınız,45-54,0
-Yaşınız,55-64,0
+Cinsiyetiniz,E,1
+Cinsiyetiniz,K,1
+Yaşınız,18-24,5
+Yaşınız,25-34,4
+Yaşınız,35-44,3
+Yaşınız,45-54,2
+Yaşınız,55-64,1
 Yaşınız,65+,0
 Hangi toplu taşıma aracını kullanıyorsunuz?,Otobüs,100
 Hangi toplu taşıma aracını kullanıyorsunuz?,"Raylı Sistemler(metro, banliyö vs...)",50
@@ -18,18 +18,18 @@ Haftalık toplu taşıma kullanma sıklığınız?,5-6 kez,60
 Haftalık toplu taşıma kullanma sıklığınız?,7-10 kez,100
 Haftalık toplu taşıma kullanma sıklığınız?,10 kez,150
 Eğitim Durumunuz nedir?,İlkokul,0
-Eğitim Durumunuz nedir?,Lise,0
-Eğitim Durumunuz nedir?,Önlisans,0
-Eğitim Durumunuz nedir?,Lisans,0
-Eğitim Durumunuz nedir?,Yüksek Lisans ve üstü,0
+Eğitim Durumunuz nedir?,Lise,1
+Eğitim Durumunuz nedir?,Önlisans,2
+Eğitim Durumunuz nedir?,Lisans,3
+Eğitim Durumunuz nedir?,Yüksek Lisans ve üstü,4
 Şahsi aracınız var mı?,Evet,300
 Şahsi aracınız var mı?,Hayır,0
 Hane halkınızın toplam aylık geliri nedir?,<10.000 TL,0
-Hane halkınızın toplam aylık geliri nedir?,10.000 TL-17.000 TL,0
-Hane halkınızın toplam aylık geliri nedir?,17.000 TL-30.000 TL,0
-Hane halkınızın toplam aylık geliri nedir?,30.000 TL-50.000 TL,0
-Hane halkınızın toplam aylık geliri nedir?,50.000 TL-80.000 TL,0
-Hane halkınızın toplam aylık geliri nedir?,80.000 TL+,0
+Hane halkınızın toplam aylık geliri nedir?,10.000 TL-17.000 TL,100
+Hane halkınızın toplam aylık geliri nedir?,17.000 TL-30.000 TL,200
+Hane halkınızın toplam aylık geliri nedir?,30.000 TL-50.000 TL,300
+Hane halkınızın toplam aylık geliri nedir?,50.000 TL-80.000 TL,400
+Hane halkınızın toplam aylık geliri nedir?,80.000 TL+,500
 Isınmak için hangi tür enerji kullanıyorsunuz?,Doğalgaz,500
 Isınmak için hangi tür enerji kullanıyorsunuz?,Elektrik,300
 Isınmak için hangi tür enerji kullanıyorsunuz?,"Diğer (LPG, Odun, Kömür vb.)",800
