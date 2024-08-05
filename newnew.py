@@ -51,7 +51,8 @@ data = load_csv(csv_file_path)
 
 # 2. Kullanıcı Arayüzü
 st.title("Karbon Ayak İzi Hesaplayıcı")
-
+tab1, tab2, tab3, = comps.tabs(["👴 Personal","🚗 Travel","🗑️ Waste",])
+tab_result,_ = result.tabs([" "," "])
 # Kullanıcıdan veri girişi alalım
 toplu_tasima_haftalik = tab1.slider("Haftalık Toplu Taşıma Süresi (saat)", 0, 20, 1)
 arac_km_yillik = tab2.number_input("Yıllık Araç Kullanım Mesafesi (km)", min_value=0)
