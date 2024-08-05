@@ -52,7 +52,7 @@ enerji_tipi = st.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 
 # 3. Karbon Ayak İzi Hesaplama
 def calculate_carbon_footprint(arac_km, enerji):
     # Burada basit bir hesaplama örneği yapalım
-    arac_emisyon = arac_km * 0.2  # Her km başına ortalama 0.2 kg CO2 emisyonu
+    arac_emisyon = arac_km_yillik * 0.2  # Her km başına ortalama 0.2 kg CO2 emisyonu
     enerji_emisyon = data[data['Arac_yakit_tipi'] == enerji]['Emisyon_Toplam'].mean()  # Enerji tipine göre ortalama emisyon
     total_emisyon = arac_emisyon + enerji_emisyon
     return total_emisyon
