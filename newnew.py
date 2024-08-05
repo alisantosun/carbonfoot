@@ -52,6 +52,7 @@ data = load_csv(csv_file_path)
 st.write("CSV dosyasının sütun isimleri:")
 st.write(data.columns.tolist())
 
+# Function to get the unique questions
 def get_unique_questions(data):
     return data['Question'].unique()
 
@@ -77,12 +78,14 @@ for question in questions:
     response = st.selectbox(question, options)
     responses[question] = response
 
-# Calculate total carbon footprint
-for question, option in responses.items():
-    total_carbon_footprint += get_carbon_footprint_value(data, question, option)
+# Add a "Hesapla" button
+if st.button('Hesapla'):
+    # Calculate total carbon footprint
+    for question, option in responses.items():
+        total_carbon_footprint += get_carbon_footprint_value(data, question, option)
+    
+    # Display total carbon footprint
+    st.write(f"Toplam Karbon Ayak İzi: {total_carbon_footprint} birim")
 
-# Display total carbon footprint
-st.write(f"Toplam Karbon Ayak İzi: {total_carbon_footprint} birim")
-
-# Optional: Provide additional information or tips
-st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
+    # Optional: Provide additional information or tips
+    st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
