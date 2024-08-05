@@ -54,7 +54,7 @@ def calculate_carbon_footprint(arac_km, enerji):
     # Burada basit bir hesaplama örneği yapalım
     arac_emisyon = arac_km * 0.2  # Her km başına ortalama 0.2 kg CO2 emisyonu
     enerji_emisyon = data[data['Arac_yakit_tipi'] == enerji]['Emisyon_Toplam'].mean()  # Enerji tipine göre ortalama emisyon
-    total_emisyon = toplu_tasima_emisyon + arac_emisyon + enerji_emisyon
+    total_emisyon = arac_emisyon + enerji_emisyon
     return total_emisyon
 
 # Kullanıcıdan gelen verilere göre hesaplama yapalım
