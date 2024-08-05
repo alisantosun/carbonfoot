@@ -70,7 +70,7 @@ with tab3:
 def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi):
     try:
         # Basit bir hesaplama örneği yapalım
-        toplu_tasima_emisyon = toplu_tasima_haftalik * data['Emisyon_toplu_tasima'].mean()  # Ortalama emisyon değeri ile çarpalım
+        toplu_tasima_emisyon = toplu_tasima_haftalik * data['Emisyon_toplutasima'].mean()  # Ortalama emisyon değeri ile çarpalım
         arac_emisyon = arac_km_yillik * 0.2  # Her km başına ortalama 0.2 kg CO2 emisyonu
         
         # Enerji tipine göre emisyon hesaplama
