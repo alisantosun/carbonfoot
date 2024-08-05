@@ -3,7 +3,9 @@ import pandas as pd
 
 # Tam dosya yolunu belirtin
 csv_file_path = 'https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv'
-
+try:
+    df = pd.read_csv(csv_file_path, error_bad_lines=False, warn_bad_lines=True)
+    st.write(df)
 
 
 # 1. CSV Dosyasını Yükleme
