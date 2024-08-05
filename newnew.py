@@ -84,6 +84,13 @@ if st.button('Karbon Ayak İzini Hesapla'):
     
     # Display total carbon footprint
     st.write(f"Toplam Karbon Ayak İzi: {total_carbon_footprint} birim")
+ # Karbon ayak izi seviyesine göre öneriler sunma
+    if total_carbon_footprint > 5000:
+        st.warning("Karbon ayak iziniz yüksek. Karbon ayak izinizi azaltmak için toplu taşıma kullanmayı ve enerji verimliliği sağlamayı düşünebilirsiniz.")
+    elif total_carbon_footprint > 2000:
+        st.info("Karbon ayak iziniz orta seviyede. Enerji tasarrufu için evinizde enerji verimli cihazlar kullanmayı ve araç kullanımını azaltmayı düşünebilirsiniz.")
+    else:
+        st.success("Karbon ayak iziniz düşük. Bu şekilde devam edin ve çevreyi koruyun!")
 
 # Optional: Provide additional information or tips
 st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
