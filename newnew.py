@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 
-github_url = 'https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv'
+csv_file_path = 'https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv'
 
-def load_csv("https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv"):
+def load_csv(https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv):
     try:
         # Veriyi oku
         df = pd.read_csv(https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv, error_bad_lines=False, warn_bad_lines=True)
