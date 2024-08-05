@@ -53,10 +53,10 @@ data = load_csv(csv_file_path)
 st.title("Karbon Ayak İzi Hesaplayıcı")
 
 # Kullanıcıdan veri girişi alalım
-toplu_tasima_haftalik = st.slider("Haftalık Toplu Taşıma Süresi (saat)", 0, 20, 1)
-arac_km_yillik = st.number_input("Yıllık Araç Kullanım Mesafesi (km)", min_value=0)
-enerji_tipi = st.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 'Doğalgaz', 'Kömür'])
-tab_result,_ = result.tabs([" "," "])
+toplu_tasima_haftalik = tab1.slider("Haftalık Toplu Taşıma Süresi (saat)", 0, 20, 1)
+arac_km_yillik = tab2.number_input("Yıllık Araç Kullanım Mesafesi (km)", min_value=0)
+enerji_tipi = tab3.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 'Doğalgaz', 'Kömür'])
+
 # 3. Karbon Ayak İzi Hesaplama
 def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi):
     try:
