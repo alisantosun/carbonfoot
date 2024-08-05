@@ -2,14 +2,35 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import base64
+
+
+# Base64 formatında arka plan resmi
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
-    return base64.b64encode(data).decode()
+    return base64.b64encode(data).decode('utf-8')
 
-background = get_base64("./background_min.jpg")
-icon2 = get_base64("./icon2.png")
-icon3 = get_base64("./icon3.png")
+background_image = get_base64("background_min.jpg")
+
+# Arka plan resmini ayarlamak için CSS
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/jpeg;base64,{background_image});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Streamlit uygulamanızın içeriği
+st.title("Arka Plan Resmi ile Streamlit Uygulaması")
+st.write("Bu uygulama arka plan resmi içerir.")
+
 # GitHub'dan CSV dosyasını okumak için URL belirtin
 csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbonfoot/main/karbon_ayak_izi_duzenlenmis.csv'
 
