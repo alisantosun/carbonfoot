@@ -48,9 +48,7 @@ def load_csv(csv_url):
 # CSV dosyasını yükle
 data = load_csv(csv_file_path)
 
-# CSV dosyasının sütun isimlerini yazdır
-st.write("CSV dosyasının sütun isimleri:")
-st.write(data.columns.tolist())
+
 
 # Function to get the unique questions
 def get_unique_questions(data):
