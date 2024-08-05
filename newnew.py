@@ -94,7 +94,7 @@ def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tip
 
 # Hesaplama butonu
 if st.button("Karbon Ayak İzini Hesapla"):
-    carbon_footprint = calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi)
+    carbon_footprint = calculate_carbon_footprint(Isınmak için hangi tür enerji kullanıyorsunuz?, arac_km_yillik, enerji_tipi)
     if carbon_footprint is not None:
         st.write(f"Toplam Karbon Ayak İzi: {carbon_footprint:.2f} kg CO2")
 
