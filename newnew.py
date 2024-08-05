@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import base64
 
 # Base64 formatında arka plan resmi
@@ -51,21 +50,21 @@ data = load_csv(csv_file_path)
 
 # 2. Kullanıcı Arayüzü
 st.title("Karbon Ayak İzi Hesaplayıcı")
-tab1, tab2, tab3, = st.tabs(["👴Toplu Taşıma","🚗 Yıllık Araç Kullanım Mesafesi","🗑️ Kullanılan Enerji Tipi",])
+tab1, tab2, tab3 = st.tabs(["👴 Toplu Taşıma","🚗 Yıllık Araç Kullanım Mesafesi","🗑️ Kullanılan Enerji Tipi"])
 
 with tab1:
     st.header("Haftalık Toplu Taşıma Süresi")
-    toplu_tasima_haftalik = tab1.slider("Haftalık Toplu Taşıma Süresi (saat)", 0, 20, 1)
+    toplu_tasima_haftalik = st.slider("Haftalık Toplu Taşıma Süresi (saat)", 0, 20, 1)
 
 # İkinci tab içeriği
 with tab2:
     st.header("Yıllık Araç Kullanım Mesafesi (km)")
-    arac_km_yillik = tab2.number_input("Yıllık Araç Kullanım Mesafesi (km)", min_value=0)
+    arac_km_yillik = st.number_input("Yıllık Araç Kullanım Mesafesi (km)", min_value=0)
 
 # Üçüncü tab içeriği
 with tab3:
     st.header("Evde Kullanılan Enerji Tipi")
-    enerji_tipi = tab3.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 'Doğalgaz', 'Kömür'])
+    enerji_tipi = st.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 'Doğalgaz', 'Kömür'])
 
 # 3. Karbon Ayak İzi Hesaplama
 def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi):
@@ -90,15 +89,18 @@ def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tip
         st.error(f"Karbon ayak izi hesaplanırken bir hata oluştu: {e}")
         return None
 
-# Kullanıcıdan gelen verilere göre hesaplama yapalım
-carbon_footprint = calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi)
-if carbon_footprint is not None:
-    st.write(f"Toplam Karbon Ayak İzi: {carbon_footprint:.2f} kg CO2")
+# Hesaplama butonu
+if st.button("Karbon Ayak İzini Hesapla"):
+    carbon_footprint = calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi)
+    if carbon_footprint is not None:
+        st.write(f"Toplam Karbon Ayak İzi: {carbon_footprint:.2f} kg CO2")
 
-    # Karbon ayak izi eşik değerleri ve öneriler
-    if carbon_footprint > 5000:
-        st.warning("Karbon ayak iziniz yüksek. Karbon ayak izinizi azaltmak için toplu taşıma kullanmayı ve enerji verimliliği sağlamayı düşünebilirsiniz.")
-    elif carbon_footprint > 2000:
-        st.info("Karbon ayak iziniz orta seviyede. Enerji tasarrufu için evinizde enerji verimli cihazlar kullanmayı ve araç kullanımını azaltmayı düşünebilirsiniz.")
+        # Karbon ayak izi eşik değerleri ve öneriler
+        if carbon_footprint > 5000:
+            st.warning("Karbon ayak iziniz yüksek. Karbon ayak izinizi azaltmak için toplu taşıma kullanmayı ve enerji verimliliği sağlamayı düşünebilirsiniz.")
+        elif carbon_footprint > 2000:
+            st.info("Karbon ayak iziniz orta seviyede. Enerji tasarrufu için evinizde enerji verimli cihazlar kullanmayı ve araç kullanımını azaltmayı düşünebilirsiniz.")
+        else:
+            st.success("Karbon ayak iziniz düşük. Bu şekilde devam edin ve çevreyi koruyun!")
     else:
-        st.success("Karbon ayak iziniz düşük. Bu şekilde devam edin ve çevreyi koruyun!")
+        st.error("Karbon ayak izi hesaplanamadı. Lütfen verilerinizi kontrol edin.")
