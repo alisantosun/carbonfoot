@@ -1,6 +1,14 @@
 import streamlit as st
 import pandas as pd
-
+import numpy as np
+from streamlit.components.v1 import html
+from sklearn.neural_network import MLPRegressor
+from sklearn.preprocessing import StandardScaler
+import pickle
+import io
+import matplotlib.pyplot as plt
+from PIL import Image, ImageDraw, ImageFont
+import base64
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
