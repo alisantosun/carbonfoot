@@ -9,7 +9,9 @@ def load_csv(csv_url):
         # Veriyi oku
         df = pd.read_csv(csv_url, error_bad_lines=False, warn_bad_lines=True)
         return df
-
+    except Exception as e:
+        st.error(f"CSV dosyasını yüklerken bir hata oluştu: {e}")
+        return None
 
 # CSV dosyasını yükle
 df = load_csv(csv_file_path)
