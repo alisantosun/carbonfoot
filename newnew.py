@@ -26,7 +26,7 @@ st.markdown(
 )
 
 # GitHub'dan CSV dosyasını okumak için URL belirtin
-csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbonfoot/main/datac.csv'
+csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbonfoot/main/karbon_ayak_izi_duzenlenmis.csv'
 
 
 
