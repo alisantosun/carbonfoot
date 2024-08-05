@@ -51,20 +51,20 @@ data = load_csv(csv_file_path)
 
 # 2. Kullanıcı Arayüzü
 st.title("Karbon Ayak İzi Hesaplayıcı")
-tab1, tab2, tab3, = st.tabs(["👴 Personal","🚗 Travel","🗑️ Waste",])
+tab1, tab2, tab3, = st.tabs(["👴Toplu Taşıma","🚗 Yıllık Araç Kullanım Mesafesi","🗑️ Kullanılan Enerji Tipi",])
 
 with tab1:
-    st.header("Personal Information")
+    st.header("Haftalık Toplu Taşıma Süresi")
     toplu_tasima_haftalik = tab1.slider("Haftalık Toplu Taşıma Süresi (saat)", 0, 20, 1)
 
 # İkinci tab içeriği
 with tab2:
-    st.header("Travel Information")
+    st.header("Yıllık Araç Kullanım Mesafesi (km)")
     arac_km_yillik = tab2.number_input("Yıllık Araç Kullanım Mesafesi (km)", min_value=0)
 
 # Üçüncü tab içeriği
 with tab3:
-    st.header("Waste Information")
+    st.header("Evde Kullanılan Enerji Tipi")
     enerji_tipi = tab3.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 'Doğalgaz', 'Kömür'])
 
 # 3. Karbon Ayak İzi Hesaplama
