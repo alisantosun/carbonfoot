@@ -79,7 +79,7 @@ for question in questions:
     responses[question] = response
 
 # Add a "Hesapla" button
-if st.button('Hesapla'):
+if st.button('Karbon Ayak İzini Hesapla'):
     # Calculate total carbon footprint
     for question, option in responses.items():
         total_carbon_footprint += get_carbon_footprint_value(data, question, option)
@@ -87,5 +87,9 @@ if st.button('Hesapla'):
     # Display total carbon footprint
     st.write(f"Toplam Karbon Ayak İzi: {total_carbon_footprint} birim")
 
-    # Optional: Provide additional information or tips
-    st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
+   if carbon_footprint > 5000:
+        st.warning("Karbon ayak iziniz yüksek. Karbon ayak izinizi azaltmak için toplu taşıma kullanmayı ve enerji verimliliği sağlamayı düşünebilirsiniz.")
+    elif carbon_footprint > 2000:
+        st.info("Karbon ayak iziniz orta seviyede. Enerji tasarrufu için evinizde enerji verimli cihazlar kullanmayı ve araç kullanımını azaltmayı düşünebilirsiniz.")
+    else:
+        st.success("Karbon ayak iziniz düşük. Bu şekilde devam edin ve çevreyi koruyun!")
