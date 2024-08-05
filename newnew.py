@@ -18,7 +18,7 @@ df = load_csv(csv_file_path)
 if df is not None:
     st.write(df)
 
-st.write(data.columns)
+st.write(csv_file_path.columns)
 
 # 1. CSV Dosyasını Yükleme
 def load_csv(csv_file_path):
