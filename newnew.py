@@ -24,9 +24,9 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+# GitHub'dan CSV dosyasını okumak için URL belirtin
+csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbonfoot/main/karbon_ayak_izi_duzenlenmis.csv'
 
-# CSV dosyasını yükle
-csv_file_path = '/mnt/data/karbon_ayak_izi_duzenlenmis.csv'
 
 def load_csv(csv_url):
     try:
