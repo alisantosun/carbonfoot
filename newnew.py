@@ -76,11 +76,11 @@ arac_km_yillik = st.number_input("Yıllık Araç Kullanım Mesafesi (km)", min_v
 enerji_tipi = st.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 'Doğalgaz', 'Kömür'])
 
 # 3. Karbon Ayak İzi Hesaplama
-def calculate_carbon_footprint(toplu_tasima, arac_km, enerji):
+def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi):
     # Burada basit bir hesaplama örneği yapalım
     toplu_tasima_emisyon = toplu_tasima_haftalik * data['Emisyon_toplu_tasima'].mean()  # Ortalama emisyon değeri ile çarpalım
     arac_emisyon = arac_km_yillik * 0.2  # Her km başına ortalama 0.2 kg CO2 emisyonu
-    enerji_emisyon = data[data['Arac_yakit_tipi'] == enerji]['Emisyon_Toplam'].mean()  # Enerji tipine göre ortalama emisyon
+    enerji_emisyon = data[data['Arac_yakit_tipi'] == enerji_tipi]['Emisyon_Toplam'].mean()  # Enerji tipine göre ortalama emisyon
     total_emisyon = toplu_tasima_emisyon + arac_emisyon + enerji_emisyon
     return total_emisyon
 
