@@ -52,59 +52,37 @@ data = load_csv(csv_file_path)
 st.write("CSV dosyasının sütun isimleri:")
 st.write(data.columns.tolist())
 
-# 2. Kullanıcı Arayüzü
-st.title("Karbon Ayak İzi Hesaplayıcı")
-tab1, tab2, tab3 = st.tabs(["👴 Toplu Taşıma","🚗 Yıllık Araç Kullanım Mesafesi","🗑️ Kullanılan Enerji Tipi"])
+ef get_unique_questions(data):
+    return data['Question'].unique()
 
-with tab1:
-    st.header("Haftalık Toplu Taşıma Süresi")
-    toplu_tasima_haftalik = st.slider("Haftalık Toplu Taşıma Süresi (saat)", 0, 20, 1)
+# Function to get the options for a specific question
+def get_options_for_question(data, question):
+    return data[data['Question'] == question]['Options'].unique()
 
-# İkinci tab içeriği
-with tab2:
-    st.header("Yıllık Araç Kullanım Mesafesi (km)")
-    arac_km_yillik = st.number_input("Yıllık Araç Kullanım Mesafesi (km)", min_value=0)
+# Function to get the carbon footprint value for a specific question and option
+def get_carbon_footprint_value(data, question, option):
+    return data[(data['Question'] == question) & (data['Options'] == option)]['Carbon_Footprint_Value'].values[0]
 
-# Üçüncü tab içeriği
-with tab3:
-    st.header("Evde Kullanılan Enerji Tipi")
-    enerji_tipi = st.selectbox("Evde Kullanılan Enerji Tipi", options=['Elektrik', 'Doğalgaz', 'Kömür'])
+# Initialize total carbon footprint
+total_carbon_footprint = 0
 
-# 3. Karbon Ayak İzi Hesaplama
-def calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi):
-    try:
-        # Basit bir hesaplama örneği yapalım
-        toplu_tasima_emisyon = toplu_tasima_haftalik * data['Emisyon_toplu_tasima'].mean()  # Ortalama emisyon değeri ile çarpalım
-        arac_emisyon = arac_km_yillik * 0.2  # Her km başına ortalama 0.2 kg CO2 emisyonu
-        
-        # Enerji tipine göre emisyon hesaplama
-        if enerji_tipi in data['Arac_yakit_tipi'].values:
-            enerji_emisyon = data[data['Arac_yakit_tipi'] == enerji_tipi]['Emisyon_Toplam'].mean()  # Enerji tipine göre ortalama emisyon
-        else:
-            st.error("Enerji tipi veri çerçevesinde bulunamadı.")
-            return None
-        
-        total_emisyon = toplu_tasima_emisyon + arac_emisyon + enerji_emisyon
-        return total_emisyon
-    except KeyError as e:
-        st.error(f"Veri çerçevesinde beklenmeyen bir sütun adı: {e}")
-        return None
-    except Exception as e:
-        st.error(f"Karbon ayak izi hesaplanırken bir hata oluştu: {e}")
-        return None
+# Get unique questions
+questions = get_unique_questions(data)
 
-# Hesaplama butonu
-if st.button("Karbon Ayak İzini Hesapla"):
-    carbon_footprint = calculate_carbon_footprint(toplu_tasima_haftalik, arac_km_yillik, enerji_tipi)
-    if carbon_footprint is not None:
-        st.write(f"Toplam Karbon Ayak İzi: {carbon_footprint:.2f} kg CO2")
+# User inputs for each question
+responses = {}
 
-        # Karbon ayak izi eşik değerleri ve öneriler
-        if carbon_footprint > 5000:
-            st.warning("Karbon ayak iziniz yüksek. Karbon ayak izinizi azaltmak için toplu taşıma kullanmayı ve enerji verimliliği sağlamayı düşünebilirsiniz.")
-        elif carbon_footprint > 2000:
-            st.info("Karbon ayak iziniz orta seviyede. Enerji tasarrufu için evinizde enerji verimli cihazlar kullanmayı ve araç kullanımını azaltmayı düşünebilirsiniz.")
-        else:
-            st.success("Karbon ayak iziniz düşük. Bu şekilde devam edin ve çevreyi koruyun!")
-    else:
-        st.error("Karbon ayak izi hesaplanamadı. Lütfen verilerinizi kontrol edin.")
+for question in questions:
+    options = get_options_for_question(data, question)
+    response = st.selectbox(question, options)
+    responses[question] = response
+
+# Calculate total carbon footprint
+for question, option in responses.items():
+    total_carbon_footprint += get_carbon_footprint_value(data, question, option)
+
+# Display total carbon footprint
+st.write(f"Toplam Karbon Ayak İzi: {total_carbon_footprint} birim")
+
+# Optional: Provide additional information or tips
+st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
