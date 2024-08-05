@@ -27,10 +27,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Streamlit uygulamanızın içeriği
-st.title("Arka Plan Resmi ile Streamlit Uygulaması")
-st.write("Bu uygulama arka plan resmi içerir.")
-
 # GitHub'dan CSV dosyasını okumak için URL belirtin
 csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbonfoot/main/karbon_ayak_izi_duzenlenmis.csv'
 
