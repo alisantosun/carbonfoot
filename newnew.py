@@ -85,8 +85,8 @@ if st.button('Karbon Ayak İzini Hesapla'):
     # Display total carbon footprint
     st.write(f"Toplam Karbon Ayak İzi: {total_carbon_footprint} birim")
 
-# Optional: Provide additional information or tips
-st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
+    # Optional: Provide additional information or tips
+    st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
 
     
  # Karbon ayak izi seviyesine göre öneriler sunma
