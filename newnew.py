@@ -2,7 +2,9 @@ import streamlit as st
 import pandas as pd
 
 # Tam dosya yolunu belirtin
-csv_file_path = '/Users/birsenbusekucuker/Desktop/karbon_ayak_izi_duzenlenmis.csv'
+csv_file_path = 'https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv'
+'
+
 
 # 1. CSV Dosyasını Yükleme
 def load_csv(file_path):
