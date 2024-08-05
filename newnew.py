@@ -52,7 +52,7 @@ data = load_csv(csv_file_path)
 st.write("CSV dosyasının sütun isimleri:")
 st.write(data.columns.tolist())
 
-ef get_unique_questions(data):
+def get_unique_questions(data):
     return data['Question'].unique()
 
 # Function to get the options for a specific question
