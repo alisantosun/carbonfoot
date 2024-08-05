@@ -1,21 +1,22 @@
 import streamlit as st
 import pandas as pd
 
-csv_file_path = 'https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv'
+# GitHub'dan CSV dosyasını okumak için URL belirtin
+csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbon_free/main/karbon_ayak_izi_duzenlenmis.csv'
 
-def load_csv(https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv):
+def load_csv(csv_url):
     try:
         # Veriyi oku
-        df = pd.read_csv(https://github.com/alisantosun/carbonfoot/blob/main/karbon_ayak_izi_duzenlenmis.csv, error_bad_lines=False, warn_bad_lines=True)
+        df = pd.read_csv(csv_url, error_bad_lines=False, warn_bad_lines=True)
         return df
     except Exception as e:
         st.error(f"CSV dosyasını yüklerken bir hata oluştu: {e}")
         return None
 
+# CSV dosyasını yükle
 df = load_csv(github_url)
 if df is not None:
     st.write(df)
-
 
 
 
