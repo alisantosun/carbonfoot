@@ -20,13 +20,16 @@ st.markdown(
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
+    .question-text {{
+        color: red;
+    }}
     </style>
     """,
     unsafe_allow_html=True
 )
+
 # GitHub'dan CSV dosyasını okumak için URL belirtin
 csv_file_path = 'https://raw.githubusercontent.com/alisantosun/carbonfoot/main/karbon_ayak_izi_duzenlenmis.csv'
-
 
 def load_csv(csv_url):
     try:
@@ -47,8 +50,6 @@ def load_csv(csv_url):
 
 # CSV dosyasını yükle
 data = load_csv(csv_file_path)
-
-
 
 # Function to get the unique questions
 def get_unique_questions(data):
@@ -73,7 +74,7 @@ responses = {}
 
 for question in questions:
     options = get_options_for_question(data, question)
-    response = st.selectbox(question, options)
+    response = st.selectbox(question, options, key=question)  # Key param added for selectbox
     responses[question] = response
 
 # Add a "Hesapla" button
@@ -88,13 +89,10 @@ if st.button('Karbon Ayak İzini Hesapla'):
     # Optional: Provide additional information or tips
     st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
 
-    
- # Karbon ayak izi seviyesine göre öneriler sunma
+    # Karbon ayak izi seviyesine göre öneriler sunma
     if total_carbon_footprint > 5000:
         st.warning("Karbon ayak iziniz yüksek. Karbon ayak izinizi azaltmak için toplu taşıma kullanmayı ve enerji verimliliği sağlamayı düşünebilirsiniz.")
     elif total_carbon_footprint > 2000:
         st.info("Karbon ayak iziniz orta seviyede. Enerji tasarrufu için evinizde enerji verimli cihazlar kullanmayı ve araç kullanımını azaltmayı düşünebilirsiniz.")
     else:
         st.success("Karbon ayak iziniz düşük. Bu şekilde devam edin ve çevreyi koruyun!")
-
-
