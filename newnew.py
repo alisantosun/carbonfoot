@@ -22,6 +22,7 @@ st.markdown(
     }}
     .question-text {{
         color: red;
+        font-weight: bold;
     }}
     </style>
     """,
@@ -74,7 +75,8 @@ responses = {}
 
 for question in questions:
     options = get_options_for_question(data, question)
-    response = st.selectbox(question, options, key=question)  # Key param added for selectbox
+    st.markdown(f'<div class="question-text">{question}</div>', unsafe_allow_html=True)
+    response = st.selectbox('', options, key=question)  # Boş soru etiketi ile selectbox
     responses[question] = response
 
 # Add a "Hesapla" button
