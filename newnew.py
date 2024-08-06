@@ -20,7 +20,7 @@ st.markdown(
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
-    .question-text {{
+    .question-text, .result-text {{
         color: red;
         font-weight: bold;
     }}
@@ -86,15 +86,15 @@ if st.button('Karbon Ayak İzini Hesapla'):
         total_carbon_footprint += get_carbon_footprint_value(data, question, option)
     
     # Display total carbon footprint
-    st.write(f"Toplam Karbon Ayak İzi: {total_carbon_footprint} birim")
+    st.markdown(f'<div class="result-text">Toplam Karbon Ayak İzi: {total_carbon_footprint} birim</div>', unsafe_allow_html=True)
 
     # Optional: Provide additional information or tips
-    st.write("Karbon ayak izinizi azaltmak için bazı ipuçları: ...")
+    st.markdown('<div class="result-text">Karbon ayak izinizi azaltmak için bazı ipuçları: ...</div>', unsafe_allow_html=True)
 
     # Karbon ayak izi seviyesine göre öneriler sunma
     if total_carbon_footprint > 5000:
-        st.warning("Karbon ayak iziniz yüksek. Karbon ayak izinizi azaltmak için toplu taşıma kullanmayı ve enerji verimliliği sağlamayı düşünebilirsiniz.")
+        st.markdown('<div class="result-text">Karbon ayak iziniz yüksek. Karbon ayak izinizi azaltmak için toplu taşıma kullanmayı ve enerji verimliliği sağlamayı düşünebilirsiniz.</div>', unsafe_allow_html=True)
     elif total_carbon_footprint > 2000:
-        st.info("Karbon ayak iziniz orta seviyede. Enerji tasarrufu için evinizde enerji verimli cihazlar kullanmayı ve araç kullanımını azaltmayı düşünebilirsiniz.")
+        st.markdown('<div class="result-text">Karbon ayak iziniz orta seviyede. Enerji tasarrufu için evinizde enerji verimli cihazlar kullanmayı ve araç kullanımını azaltmayı düşünebilirsiniz.</div>', unsafe_allow_html=True)
     else:
-        st.success("Karbon ayak iziniz düşük. Bu şekilde devam edin ve çevreyi koruyun!")
+        st.markdown('<div class="result-text">Karbon ayak iziniz düşük. Bu şekilde devam edin ve çevreyi koruyun!</div>', unsafe_allow_html=True)
